@@ -28,7 +28,6 @@ class App < Sinatra::Base
       @word4 = params[:word4]
       @word5 = params[:word5]
       "#{@say} #{@word1} #{@word2} #{@word3} #{@word4} #{@word5}."
-binding.pry
   end
 
   get "/:operation/:number1/:number2" do
@@ -36,6 +35,8 @@ binding.pry
   @operation = params[:operation]
   @number1 = params[:number1].to_i
   @number2 = params[:number2].to_i
+  binding.pry
+
   # In times when you need a Dynamic routes with equations use if else statment.
   if @operation == "add"
     "#{@number1 + @number2}"
